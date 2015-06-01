@@ -183,6 +183,9 @@ GameManager.prototype.solve = function() {
     }
 
     var self = this;
+    // We reverse the path in order to pop() elements form the tail.
+    // This is slightly naive, since the path could be returned this
+    // way from Search()... but... meh.
     var reversed = path.reverse();
     var walk = function(actions) {
         if (actions.length > 0) {
